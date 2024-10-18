@@ -10,7 +10,7 @@ let set;
 let active = "focus";
 let count = 59;
 let paused = true;
-let minCount = 1;
+let minCount = 0;
 time.textContent = `${minCount + 1}:00`;
 var sound = new Audio('sound.mp3');
 
@@ -25,13 +25,13 @@ reset.addEventListener(
     pauseTimer();
     switch (active) {
       case "long":
-        minCount = 2;
+        minCount = 0;
         break;
       case "short":
-        minCount = 1;
+        minCount = 0;
         break;
       default:
-        minCount = 1;
+        minCount = 0;
         break;
     }
     count = 59;
@@ -49,7 +49,7 @@ focusButton.addEventListener("click", () => {
   removeFocus();
   focusButton.classList.add("btn-focus");
   pauseTimer();
-  minCount = 1;
+  minCount = 0;
   count = 59;
   time.textContent = `${minCount + 1}:00`;
 });
@@ -59,7 +59,7 @@ shortBreakButton.addEventListener("click", () => {
   removeFocus();
   shortBreakButton.classList.add("btn-focus");
   pauseTimer();
-  minCount = 1;
+  minCount = 0;
   count = 59;
   time.textContent = `${minCount + 1}:00`;
 });
@@ -69,7 +69,7 @@ longBreakButton.addEventListener("click", () => {
   removeFocus();
   longBreakButton.classList.add("btn-focus");
   pauseTimer();
-  minCount = 2;
+  minCount = 0;
   count = 59;
   time.textContent = `${minCount + 1}:00`;
 });
